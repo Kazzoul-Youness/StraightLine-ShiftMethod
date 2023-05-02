@@ -6,7 +6,7 @@
 - [Technologies](#technologies)
 - [Algorithm shift method](#algorithm-shift-method)
 - [Graphe planaire](#graphe-planaire)
-- [Output](#output)
+- [Test](#test)
 
 
 ## General info
@@ -30,20 +30,12 @@ Ce projet est créé avec JavaSE-1.8
 * l'ordre canonique est : v1, v2, .... v16, comme montre l'image,
 ![Graphe avec l'ordre canonique](https://github.com/NessYou-cyber/StraightLine-ShiftMethod/blob/main/images/Capture%20d%E2%80%99%C3%A9cran%20du%202023-04-28%2010-19-36.png)
 
-On introduit les sommets un par un, en choisissant leurs emplacement comme le montre l'output [Output](#output).
+On introduit les sommets un par un, en choisissant leurs emplacement comme le montre le test [Test](#test).
+On a au départ le graphe (v1, v2, v3), on a v4 entre v3 et v2, on a v5 entre v4 et v2 ....
 
 	
-## Setup
-To run this project, install it locally using npm:
 
-```
-$ cd ../lorem
-$ npm install
-$ npm start
-```
-
-
-## Output
+## Test
 ```
 	Sommets :
 		v1 : (0,0) 
@@ -52,6 +44,7 @@ $ npm start
 
 ---------------------------
 		 Etape 1
+---------------------------		 
      
 	Sommets :
 		v1 : (0,0) 
@@ -73,7 +66,7 @@ Enter le point wq : v2
 		v3 : (1,1) 
 		v4 : (2,2) 
 
- liste du contour  
+ liste de frontière  
 v1 v3 v4 v2 
 
 		 Fin étape 1
@@ -81,7 +74,7 @@ v1 v3 v4 v2
 Voulez-vous continuer ? (o/n) o
 
 ```
-// étape 1, dans la photo on voit le décalage de v2 de 2 unité vers la droite et insertion de v4
+// étape 1, dans la photo on voit le décalage du sommet v2 de 2 unité vers la droite et insertion de v4
 
 ![étape 1](https://github.com/NessYou-cyber/StraightLine-ShiftMethod/blob/main/images/Capture%20d%E2%80%99%C3%A9cran%20du%202023-05-01%2023-31-45.png)
 ```
@@ -90,7 +83,7 @@ Voulez-vous continuer ? (o/n) o
 
 ---------------------------
 		 Etape 2
-
+---------------------------
 	Sommets :
 		v1 : (0,0) 
 		v2 : (4,0) 
@@ -113,7 +106,7 @@ Enter le point wq : v2
 		v4 : (2,2) 
 		v5 : (3,3) 
 
- liste du contour  
+ liste de frontière  
 v1 v3 v4 v5 v2 
 
 
@@ -123,7 +116,7 @@ Voulez-vous continuer ? (o/n) o
 
 ---------------------------
 		 Etape 3
-
+---------------------------
 	Sommets :
 		v1 : (0,0) 
 		v2 : (6,0) 
@@ -148,7 +141,7 @@ Enter le point wq : v2
 		v5 : (3,3) 
 		v6 : (4,4) 
 
- liste du contour  
+ liste de frontière  
 v1 v3 v4 v5 v6 v2 
 
 
@@ -158,7 +151,7 @@ Voulez-vous continuer ? (o/n) o
 
 ---------------------------
 		 Etape 4
-
+---------------------------
 	Sommets :
 		v1 : (0,0) 
 		v2 : (8,0) 
@@ -185,7 +178,7 @@ Enter le point wq : v3
 		v6 : (6,4) 
 		v7 : (2,2) 
 
- liste du contour  
+ liste de frontière  
 v1 v7 v3 v4 v5 v6 v2 
 
 
@@ -195,7 +188,7 @@ Voulez-vous continuer ? (o/n) o
 
 ---------------------------
 		 Etape 5
-
+---------------------------
 	Sommets :
 		v1 : (0,0) 
 		v2 : (10,0) 
@@ -224,7 +217,7 @@ Enter le point wq : v7
 		v7 : (4,2) 
 		v8 : (3,3) 
 
- liste du contour  
+ liste de frontière  
 v1 v8 v7 v3 v4 v5 v6 v2 
 
 
@@ -234,7 +227,7 @@ Voulez-vous continuer ? (o/n) o
 
 ---------------------------
 		 Etape 6
-
+---------------------------
 	Sommets :
 		v1 : (0,0) 
 		v2 : (12,0) 
@@ -265,7 +258,7 @@ Enter le point wq : v8
 		v8 : (5,3) 
 		v9 : (4,4) 
 
- liste du contour  
+ liste de frontière  
 v1 v9 v8 v7 v3 v4 v5 v6 v2 
 
 
@@ -281,7 +274,7 @@ Voulez-vous continuer ? (o/n) o
 
 ---------------------------
 		 Etape 7
-
+---------------------------
 	Sommets :
 		v1 : (0,0) 
 		v2 : (14,0) 
@@ -314,7 +307,7 @@ Enter le point wq : v4
 		v9 : (4,4) 
 		v10 : (6,6) 
 
- liste du contour  
+ liste de frontière  
 v1 v9 v10 v4 v5 v6 v2 
 
 
@@ -323,7 +316,15 @@ v1 v9 v10 v4 v5 v6 v2
 Voulez-vous continuer ? (o/n) o
 
 ```
-// étape 7, dans la photo on voit le décalage de v2 de 2 unité vers la droite et insertion de v4
+étape 7, dans la photo on veut inserer v10, on a les sommets : 
+à gauche : v1 v9
+au milieu: v8 v7 v3    => décalage +1 vers la droite
+à droite : v4 v5 v6 v2 => décalage +2 vers la droite
+
+Apres décalage on inser v10,
+
+On a aussi la liste de frontière qui change, pour êtres commes ça : v1 v9 v10 v4 v5 v6 v2 
+et donc v10 devient le parent des sommets v8 v7 v3  
 
 ![étape 7](https://github.com/NessYou-cyber/StraightLine-ShiftMethod/blob/main/images/Capture%20d%E2%80%99%C3%A9cran%20du%202023-04-28%2011-07-41.png)
 ```
@@ -365,7 +366,7 @@ Enter le point wq : v6
 		v10 : (6,6) 
 		v11 : (13,5) 
 
- liste du contour  
+ liste de frontière  
 v1 v9 v10 v4 v11 v6 v2 
 
 
@@ -374,7 +375,7 @@ v1 v9 v10 v4 v11 v6 v2
 Voulez-vous continuer ? (o/n) o
 
 ```
-// étape 7, insertion de v11
+étape 7, insertion de v11
 
 ![étape 7](https://github.com/NessYou-cyber/StraightLine-ShiftMethod/blob/main/images/v11.png)
 ```
@@ -418,7 +419,7 @@ Enter le point wq : v11
 		v11 : (15,5) 
 		v12 : (14,6) 
 
- liste du contour  
+ liste de frontière  
 v1 v9 v10 v4 v12 v11 v6 v2 
 
 
@@ -427,7 +428,7 @@ v1 v9 v10 v4 v12 v11 v6 v2
 Voulez-vous continuer ? (o/n) o
 
 ```
-// étape 9, insertion de v12
+étape 9, insertion de v12
 
 ![étape 79](https://github.com/NessYou-cyber/StraightLine-ShiftMethod/blob/main/images/v12.png)
 ```
@@ -473,7 +474,7 @@ Enter le point wq : v12
 		v12 : (16,6) 
 		v13 : (11,11) 
 
- liste du contour  
+ liste de frontière  
 v1 v9 v10 v13 v12 v11 v6 v2 
 
 
@@ -482,7 +483,7 @@ v1 v9 v10 v13 v12 v11 v6 v2
 Voulez-vous continuer ? (o/n) o
 
 ```
-// étape 10, insertion de v13
+étape 10, insertion de v13
 
 ![étape 10](https://github.com/NessYou-cyber/StraightLine-ShiftMethod/blob/main/images/v13.png)
 ```
@@ -530,7 +531,7 @@ Enter le point wq : v6
 		v13 : (11,11) 
 		v14 : (12,12) 
 
- liste du contour  
+ liste de frontière  
 v1 v9 v10 v13 v14 v6 v2 
 
 
@@ -539,7 +540,7 @@ v1 v9 v10 v13 v14 v6 v2
 Voulez-vous continuer ? (o/n) o
 
 ```
-// étape 11, insertion de v14
+étape 11, insertion de v14
 
 ![étape 11](https://github.com/NessYou-cyber/StraightLine-ShiftMethod/blob/main/images/v14.png)
 ```
@@ -589,7 +590,7 @@ Enter le point wq : v13
 		v14 : (14,12) 
 		v15 : (12,12) 
 
- liste du contour  
+ liste de frontière  
 v1 v15 v13 v14 v6 v2 
 
 
@@ -598,7 +599,7 @@ v1 v15 v13 v14 v6 v2
 Voulez-vous continuer ? (o/n) o
 
 ```
-// étape 12, insertion de v15
+étape 12, insertion de v15
 
 ![étape 12](https://github.com/NessYou-cyber/StraightLine-ShiftMethod/blob/main/images/v15.png)
 ```
@@ -650,7 +651,7 @@ Enter le point wq : v2
 		v15 : (13,12) 
 		v16 : (14,14) 
 
- liste du contour  
+ liste de frontière  
 v1 v16 v2 
 
 
@@ -660,7 +661,7 @@ v1 v16 v2
 
 Voulez-vous continuer ? (o/n) 
 ```
-// étape 13, insertion de v16
+étape 13, insertion de v16
 
 ![étape 13](https://github.com/NessYou-cyber/StraightLine-ShiftMethod/blob/main/images/v16.png)
 
