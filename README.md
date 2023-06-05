@@ -21,8 +21,14 @@ Ce projet est créé avec JavaSE-1.8
 
 
 ## Algorithm shift method
-* C'est une implémentation d'algorithme Shift method
+* Pseudo-code Shift method
 ![Algorithm Shift method](https://github.com/NessYou-cyber/StraightLine-ShiftMethod/blob/main/images/Capture%20d%E2%80%99%C3%A9cran%20du%202023-05-01%2023-15-29.png)
+
+* Algorithme Shift method
+![Algorithm Shift method](https://github.com/Kazzoul-Youness/StraightLine-ShiftMethod/blob/main/images/Capture%20d%E2%80%99%C3%A9cran%20du%202023-06-06%2000-38-56.png)
+
+* Procédure Accumulate-Offset
+![Algorithm Shift method](https://github.com/Kazzoul-Youness/StraightLine-ShiftMethod/blob/main/images/Capture%20d%E2%80%99%C3%A9cran%20du%202023-06-06%2000-42-49.png)
 
 <br/>
 
