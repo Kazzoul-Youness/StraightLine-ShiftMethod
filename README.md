@@ -36,6 +36,14 @@ On a au départ le graphe (v1, v2, v3), on a v4 entre v3 et v2, on a v5 entre v4
 	
 
 ## Test
+Pour tester sur console en ligne de commande (Linux) <br/>
+Ouvrez le terminal et accédez au répertoire où se trouve le fichier source Java:<br/>
+```
+cd /Graph/src
+javac ShiftMethod.java
+java ShiftMethod 
+```
+
 ```
 	Sommets :
 		v1 : (0,0) 
