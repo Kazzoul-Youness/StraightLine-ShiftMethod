@@ -44,6 +44,8 @@ javac ShiftMethod.java
 java ShiftMethod 
 ```
 
+Voici le résultat de notre teste vu en détaille sur le travaille de mémoire:
+
 ```
 	Sommets :
 		v1 : (0,0) 
